@@ -1,7 +1,7 @@
 /*
-Copyright © 2024 Aly Ashour alyashour1@gmail.com
-
+Copyright © 2024 ALY ASHOUR <ALYASHOUR1@GMAIL.COM>
 */
+
 package main
 
 import "recurse-cli/cmd"

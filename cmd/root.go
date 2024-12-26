@@ -1,6 +1,7 @@
 /*
-Copyright © 2024 Aly Ashour alyashour1@gmail.com
+Copyright © 2024 ALY ASHOUR <ALYASHOUR1@GMAIL.COM>
 */
+
 package cmd
 
 import (
@@ -9,13 +10,15 @@ import (
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
+
+	tasks "recurse-cli/cmd/tasks"
 )
 
 var cfgFile string
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "curse",
+	Use:   "crse",
 	Short: "Organization Management Software",
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
@@ -35,16 +38,9 @@ func Execute() {
 
 func init() {
 	cobra.OnInitialize(initConfig)
-
-	// Here you will define your flags and configuration settings.
-	// Cobra supports persistent flags, which, if defined here,
-	// will be global for your application.
-
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.recurse-cli.yaml)")
 
-	// Cobra also supports local flags, which will only run
-	// when this action is called directly.
-	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	rootCmd.AddCommand(tasks.TasksCmd)
 }
 
 // initConfig reads in config file and ENV variables if set.

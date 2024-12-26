@@ -1,7 +1,7 @@
 /*
-Copyright © 2024 NAME HERE <EMAIL ADDRESS>
-
+Copyright © 2024 ALY ASHOUR <ALYASHOUR1@GMAIL.COM>
 */
+
 package cmd
 
 import (

@@ -30,4 +30,4 @@ require (
 
 require recurse-core v0.0.0
 
-replace recurse-core => ../recurse-core
+replace recurse-core => ../core
