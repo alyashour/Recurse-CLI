@@ -21,9 +21,8 @@ type TaskManager interface {
 	DeleteTask(id int) error
 }
 
-var manager = core.TaskManager{}
+var manager = core.JSONTaskManager{}
 
-// tasksCmd represents the tasks command
 var TasksCmd = &cobra.Command{
 	Use:   "tasks",
 	Short: "Manage a list of tasks",
