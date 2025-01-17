@@ -1,5 +1,5 @@
 /*
-Copyright © 2024 ALY ASHOUR <ALYASHOUR1@GMAIL.COM>
+Copyright © 2025 ALY ASHOUR <ALYASHOUR1@GMAIL.COM>
 */
 
 package cmd
@@ -8,18 +8,17 @@ import (
 	"fmt"
 	"time"
 
-	"recurse-core/task"
 	core "recurse-core/task"
 
 	"github.com/spf13/cobra"
 )
 
 type TaskManager interface {
-	CreateTask(title, description, assignee string, dueDate time.Time) (*task.Task, error)
-	GetTask(id int) (*task.Task, error)
-	UpdateTask(id int, updates task.Task) error
+	SaveTask(*core.Task) (id int, e error)
+	GetTask(id int) (*core.Task, error)
+	GetTasks() ([]core.Task, error)
+	UpdateTask(id int, updates core.Task) error
 	DeleteTask(id int) error
-	ListTasks() ([]task.Task, error)
 }
 
 var manager = core.TaskManager{}
